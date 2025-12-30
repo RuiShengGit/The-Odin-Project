@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet"  href="styles.css">
+</head>
+<body>
+    <div class="image-section">
+        <div class="company-header">
+            <img class="logo" src="images/odin-lined.png" alt="">
+            <h1 class="company">The Odin Project</h1>
+        </div>
+        
+        <img class="illustration" src="images/sea-landscape-with-lighthouse-island-ship.png">
+        <p class="quote">Sign up today and become one of us!</p>
+    </div>
+    <div class="form-section">
+        <form action="" method="">
+            <legend class="header">Get Started</legend>
+            <div class="form-container">
+                <div class="input-container">
+                    <label for="first-name"></label>
+                    <input id="first-name" type="text" name="first-name" value="" pattern="^[^0-9]+$" placeholder="" required>
+                    <span class="ph">FIRST NAME *</span>
+                    <span class="error-text"></span>
+                </div>
+                <div class="input-container">
+                    <label for="last-name"></label>
+                    <input id="last-name" type="text" name="last-name" value="" pattern="^[^0-9]+$" placeholder="" required>
+                    <span class="ph">LAST NAME *</span>
+                    <span class="error-text"></span>
+                </div>
+                <div class="input-container">
+                    <label for="email"></label>
+                    <input id="email" type="email" name="email" aria-describedby="email-notes" placeholder="" required>
+                    <span class="ph">E-MAIL *</span>
+                    <span class="error-text"></span>
+                </div>
+                <div class="input-container">
+                    <label for="tel"></label>
+                    <input id="telephone" type="tel" name="tel" pattern="^[0-9]+$" minlength="8" maxlength="8" placeholder="">
+                    <span class="ph">PHONE NUMBER</span>
+                    <span class="error-text"></span>
+                </div>
+                <div class="input-container">
+                    <label for="password"></label>
+                    <input id="password" type="password" name="password" autocomplete="new-password" minlength="8" placeholder="" required>
+                    <span class="ph">PASSWORD *</span>
+                    <span class="error-text"></span>
+                </div>
+                <div class="input-container">
+                    <label for="password-confirm"></label>
+                    <input id="password-confirm" type="password" name="password-confirm" placeholder="" required>
+                    <span class="ph">CONFIRM PASSWORD *</span>
+                    <span class="error-text"></span>
+                </div>
+                <div id="btm">
+                    <button class="submit-btn" type="submit">Create Account</button>
+                    <p class="login-text">
+                        Already have an account?       
+                        <a>LOG IN</a>
+                    </p> 
+                </div>             
+                                                                                       
+            </div>
+            
+        </form>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>

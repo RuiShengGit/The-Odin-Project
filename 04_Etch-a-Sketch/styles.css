@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'SketchChalk';
+  src: url('/fonts/SketchChalk-vnveO.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinSketchRegular';
+  src: url('/fonts/CabinSketchRegular-LPBG.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+body{
+    font-family: 'SketchChalk';
+    background-color: rgb(219, 167, 233);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    margin: 20px 0px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 65px;
+}
+
+.button{
+    border-radius: 5px;
+    font-family: 'CabinSketchRegular';
+    margin-bottom: 40px;
+    font-size: 24px;
+    width:250px;
+    height: 50px;
+    font-weight: 200;
+}
+
+.cell{
+    /* Border-box → width and height include the content, padding, and border, so the element stays exactly the size you set. DO not need to worry about size exceeding width due to borders which is the default of content-box */
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid rgb(199, 196, 196);
+    transition: background-color 0.3s ease;;
+}
+
+.container{
+    width: 960px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid black;
+}
+

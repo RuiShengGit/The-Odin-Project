@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3 class="title">"Rock-Paper-Scissors"</h3>
+    <div class="scoreBoard">
+        <div class="humanScore">0</div>
+        <div class="divide">:</div>
+        <div class="computerScore">0</div>
+    </div>
+    <div class="content">
+        <div class="human side">
+            <h5 class="player">Human</h5>
+            <div class="human img-box">
+            </div>
+        </div>
+        <div class="computer side">
+            <h5 class="player">Computer</h5>
+            <div class="computer img-box">
+            </div>
+        </div>
+    </div>
+    <div class="options">
+        <button data-choice="rock">Rock</button>
+        <button data-choice="paper">Paper</button>
+        <button data-choice="scissors">Scissors</button>
+    </div>
+    <script src="gameLogic.js"></script>
+</body>
+</html>

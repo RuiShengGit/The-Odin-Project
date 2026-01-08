@@ -86,11 +86,12 @@ body{
 
 
 /* Make both occupy the same position */
-#light, #dark {
+.theme {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+  transition: transform 0.2s ease;;
   
 }
 
@@ -101,6 +102,11 @@ body{
 #dark{
     color: var(--text-colour);
 }
+
+.theme:hover {
+  transform: translate(-50%, -55%) rotate(15deg);
+}
+
 
 .add-book,.submit,.cancel{
     border-radius: 5px;

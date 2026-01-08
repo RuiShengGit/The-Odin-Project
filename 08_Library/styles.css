@@ -115,6 +115,9 @@ body{
 .add-book{
     padding: 10px 14px;
     color: var(--text-colour);
+    display: flex;
+    align-items: center;
+    gap: 5px;;
 }
 
 .top-right{

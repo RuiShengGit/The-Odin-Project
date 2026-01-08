@@ -12,6 +12,8 @@
     'opsz' 24;
 }
 
+
+
 button{
     background: none;
     border: 0;
@@ -19,11 +21,12 @@ button{
 }
 
 [data-theme="light"]{
-    --main-bg-colour: rgb(245, 244, 244);
+    --main-bg-colour: rgb(238, 237, 237);
     --second-bg-colour: white;
     --text-colour: #000000;
     --button-colour: rgb(243, 242, 242);
     --button-hover: rgb(189, 188, 188);
+    --secondary-text-colour:rgb(89, 89, 89);
 }
 
 [data-theme="dark"]{
@@ -32,34 +35,39 @@ button{
     --text-colour: hsl(0, 4%, 86%);
     --button-colour: rgb(48, 47, 47);
     --button-hover: grey;
+    --secondary-text-colour:rgb(145, 143, 143);
 }
 
 :root{
     font-size: 62.5%;
-    font-family: 'Nunito Sans'
+    font-family: 'Nunito Sans', 'Courier New', Courier, monospace;
+    font-weight: 300;
+    
 }
 
 body{
+    box-sizing: border-box;
     min-height: 100vh;
     margin: 0;
     position: relative;
-    ;
+    background-color: var(--main-bg-colour);
 }
 
 .container{
-    height: 100vh;
+    box-sizing: border-box;
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: auto 1fr;
 }
 
 .top.section{
+    box-sizing: border-box;
+    width: 100%;
     grid-row: 1/2;
     background-color: var(--second-bg-colour);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
-    /* border-bottom: 1px solid rgb(164, 164, 164); */
+    padding: 10px 35px;
     box-shadow: 0 4px 8px -2px rgba(0,0,0,0.4);
 }
 
@@ -125,23 +133,35 @@ body{
   display: none;
 }
 
-.main.section{
-    grid-row: 2/6;
-    background-color: var(--main-bg-colour);
+
+
+body.opacity-bg::after {
+    content: '';
+    position: fixed; /* Sit on top of everything */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* The dark overlay */
+    z-index: 9; /* High enough to cover content, lower than popup */
+    /* pointer-events: none; */
 }
 
 
 .popup{
     display: none;
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color:  var(--second-bg-colour);
     padding: 20px;
+    border-radius: 8px;
+    color: var(--text-colour);
+    z-index: 10;
 }
 
-form{
+form{   
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -154,6 +174,7 @@ form{
 
 .submit,.cancel{
     padding: 8px;
+    color: var(--text-colour);
 }
 
 input {
@@ -163,6 +184,8 @@ input {
     background-color: var(--main-bg-colour);
     outline: none; /* remove default browser focus outline */
     transition: border-color 0.2s ease; /* smooth color change */
+    color: var(--text-colour);
+    
 }
 
 input:focus {
@@ -179,7 +202,126 @@ input:focus {
     font-size: 1.4rem;
 }
 
+.empty-state{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%,-50%);
+    color: var(--text-colour);
+}
 
+.empty-state p{
+    font-size: 1.8rem;
+}
 
+#shelfIcon{
+    font-size: 70px;
+}
 
+.book-card{
+    background-color: var(--second-bg-colour);
+    color: var(--text-colour);
+
+    border-radius: 8px;
+    padding: 2.7rem 4.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--main-bg-colour);
+
+    position:relative;
+}
+
+.book-card:hover{
+    transform: translateY(-5px);
+    border-color: var(--button-hover);
+    
+}
+
+.book-card:active {
+    transform: translateY(0);
+}
+
+.book-card h3{
+    position: relative;
+    font-size: 2.5rem;
+    color: var(--text-colour);
+    margin: 0.6rem 0;
+
+    width: 100%;
+    text-align: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-info{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    color: var(--secondary-text-colour);
+    
+}
+
+.info-text{
+    flex: 1;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.main-section{
+    box-sizing: border-box;
+    width: 100%;
+    grid-row: 2/6;
+    display: grid;
+    padding: 0 1.5rem;
+    margin: 3rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card-btn{
+    color: var(--button-hover);
+    transition: transform 0.2s ease;
+    font-size: 2rem;
+}
+
+.delete-btn{
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+
+.read-btn{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+.delete-btn:hover{
+    color: red;
+}
+
+.hasRead{
+    color: green;
+}
+
+.read-btn:hover{
+    color: lightgreen;
+}
 

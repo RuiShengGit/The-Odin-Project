@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'GamePlayer';
+    src: url(assets/fonts/GamePlayer-xgr8.ttf);
+}
+
+.changa-one-regular {
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-sans{
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+:root{
+    font-size: 62.5%;
+    --background-colour: rgb(254, 255, 179);
+    --secondary-colour: rgb(203, 113, 2);
+    --third-colour: rgb(252, 232, 83);
+    --text-colour: rgb(131, 76, 4);
+    --border-colour:rgb(96, 83, 15);
+    --text-color:rgb(80, 59, 38);
+    font-family: "Changa One", serif;
+    
+}
+
+body{
+    background-color: var(--background-colour);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.start-section{
+    flex-grow: 1;              
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* Center vertically */
+    align-items: center;        /* Center horizontally */
+}
+
+.container.started .start-section{
+    flex-grow: 0;        /* Stop growing */
+}
+
+.title{
+    font-family: 'GamePlayer';
+    font-size: 6.5rem;
+    color: var(--secondary-colour);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.controls{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:2rem;
+    align-items: center;
+}
+
+.player-inputs{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    
+}
+
+.name-container{
+    display: flex;
+    flex-direction: column;
+    gap:0.6rem;
+}
+
+label{
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+
+
+input{
+    border-radius: 8px;
+    padding: 8px 12px ;
+    max-width:25rem;
+    border: none;
+    font-size: 1.9rem;
+    background-color: var(--third-colour);
+}
+
+#reset-button, #next-round{
+    border-radius: 5px;
+    border: 1px solid var(--border-colour);
+    background-color: var(--secondary-colour);
+    font-size: 2.4rem;
+    padding: 8px 10px;
+    width: 15rem;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+#next-round{
+    display: none;
+}
+
+.container.started #next-round{
+    display: block;
+}
+
+.buttons{
+    display: flex;
+    gap:2rem;
+}
+
+.names{
+    display: flex;
+    font-size: 3rem;
+    gap: 5rem;
+    width: 100%;
+}
+
+p{
+    margin: 0;
+}
+
+.display {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center; /* center everything horizontally */
+    align-items: center;     /* center vertically */
+    gap: 20px;               /* space between players */
+    font-size: 2.4rem;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;  /* stack name above score */
+    align-items: center;     /* center text horizontally */
+}
+
+.game-board{
+    display: none;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 50rem;
+    width: 50rem;
+    gap:1px;
+
+}
+
+.container.started .game-board{
+    display: grid;
+}
+
+.cell{   
+    box-sizing: border-box;
+    background-color: white;
+
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+
+.message{
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    color: var(--secondary-colour);
+}
+
+.cell{
+    font-size: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

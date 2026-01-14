@@ -4,22 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header class="title">Tic Tac Toe</header>
-        <section class="controls">
-            <div class="player-inputs">
-                <input type="text" id="player1" placeholder="Enter a Name">
-                <input type="text" id="player2" placeholder="Enter a Name">
-            </div>
-            <button id="reset-button">Press Start!</button>
-        </section>
-        <div class="score-board">
-            <div class="player1Score"></div>
-            <div class="divide"></div>
-            <div class="player2Score"></div>
+        <div class="start-section">
+            <header class="title">Tic Tac Toe</header>
+            <section class="controls">
+                <div class="player-inputs">
+                    <div class="name-container">
+                        <label for="player1" class="labels">Player 1: </label>
+                        <input type="text" id="player1" placeholder="Enter a Name">
+                    </div>
+                    <div class="name-container">
+                        <label for="player2" class="labels">Player 2: </label>
+                        <input type="text" id="player2" placeholder="Enter a Name">
+                    </div>
+                    
+                </div>
+                <div class="buttons"> 
+                    <button id="reset-button">Start</button>
+                    <button id="next-round">Next Round</button>
+                </div>               
+            </section>
         </div>
+        <div class="display">
+            <div class="player">
+                <p class="p1-name"></p>
+                <div class="player1Score"></div>
+            </div>
+            <div class="divide"></div>
+            <div class="player">
+                <p class="p2-name"></p>
+                <div class="player2Score"></div>
+            </div>
+        </div>
+
+        
         <p class="message"></p>
         <div class="game-board" id="game-board"></div>
 
